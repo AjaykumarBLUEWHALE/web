@@ -1,107 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Homepage</title>
     <style>
-/* Optimized and Corrected CSS */ .input__container { position: relative; background: rgba(255, 255, 255, 0.664); padding: 10px 15px; display: flex; justify-content: center; align-items: center; gap: 5px; border-radius: 22px; max-width: 300px; transition: transform 400ms; transform-style: preserve-3d; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 1em 0;
+        text-align: center;
+    }
 
-.shadow__input { position: absolute; width: 100%; height: 100%; left: 0; bottom: 0; z-index: -1; filter: blur(30px); border-radius: 20px; background: radial-gradient(at 85% 51%, hsla(60, 60%, 61%, 1) 0px, transparent 50%), radial-gradient(at 74% 68%, hsla(235, 69%, 77%, 1) 0px, transparent 50%), radial-gradient(at 64% 79%, hsla(284, 72%, 73%, 1) 0px, transparent 50%), radial-gradient(at 75% 16%, hsla(283, 60%, 72%, 1) 0px, transparent 50%), radial-gradient(at 90% 65%, hsla(153, 70%, 64%, 1) 0px, transparent 50%), radial-gradient(at 91% 83%, hsla(283, 74%, 69%, 1) 0px, transparent 50%), radial-gradient(at 72% 91%, hsla(213, 75%, 75%, 1) 0px, transparent 50%); }
+    nav {
+        background-color: #333;
+        padding: 1em;
+        text-align: center;
+    }
 
-.input__button__shadow { cursor: pointer; border: none; background: none; transition: transform 400ms, background 400ms; display: flex; justify-content: center; align-items: center; border-radius: 12px; padding: 5px; }
+    nav a {
+        color: white;
+        margin: 0 1em;
+        text-decoration: none;
+    }
 
-.input__button__shadow:hover { background: rgba(255, 255, 255, 0.411); }
+    main {
+        padding: 2em;
+        text-align: center;
+    }
 
-.input__search { width: 100%; border-radius: 20px; outline: none; border: none; padding: 8px; }
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
 
-/* General Styles */ body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e7e7e7;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        width: 200px;
+        height: 50px;
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+    }
 
-header { background-color: #4CAF50; color: white; padding: 1em 0; text-align: center; }
+    .card span {
+        color: #fff;
+        font-weight: bold;
+    }
 
-nav { margin: 0; padding: 1em; background-color: #333; }
+    .social-link {
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 24px;
+    }
+</style>
 
-nav a { color: white; margin: 0 1em; text-decoration: none; }
-
-main { padding: 2em; }
-
-footer { background-color: #333; color: white; text-align: center; padding: 1em 0; position: fixed; width: 100%; bottom: 0; }
-
-/* Card Styles */ .card { position: relative; display: flex; align-items: center; justify-content: center; background: #e7e7e7; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; height: 50px; width: 200px; border-radius: 10px; }
-
-.card::before, .card::after { position: absolute; width: 50%; height: 100%; transition: transform 0.25s linear; z-index: 1; }
-
-.card::before { content: ""; left: 0; background-color: #4d60b6; }
-
-.card::after { content: ""; right: 0; background-color: #4453a6; }
-
-.card:hover { box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-
-.card:hover span { opacity: 0; }
-
-.card:hover::before { opacity: 0.5; transform: translateY(-100%); }
-
-.card:hover::after { opacity: 0.5; transform: translateY(100%); }
-
-.card span { position: absolute; width: 100%; height: 100%; color: whitesmoke; font-family: 'Fira Mono', monospace; font-size: 24px; font-weight: 700; opacity: 1; transition: opacity 0.25s; z-index: 2; }
-
-.card .social-link { display: flex; align-items: center; justify-content: center; width: 25%; height: 100%; color: whitesmoke; font-size: 24px; text-decoration: none; transition: transform 0.25s; }
-
-.card .social-link:hover { background-color: rgba(249, 244, 255, 0.774); animation: bounce 0.4s linear; }
-
-@keyframes bounce { 40% { transform: scale(1.4); } 60% { transform: scale(0.8); } 80% { transform: scale(1.2); } 100% { transform: scale(1); } }
-
-
-
-<style/>
 </head>
 <body>
     <header>
         <h1>Welcome to My Homepage</h1>
-    </header>
+    </header><nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<main>
+    <h2>About Me</h2>
+    <p>Hello! Let’s see what changes have happened and what is new. Whatever is meant to happen will happen.</p>
 
-    <main>
-        <h2>About Me</h2>
-        <p>Hello! Let’s see what changes have happened and what is new. Whatever is meant to happen will happen.</p>
+    <div class="card">
+        <span>Social</span>
+        <a class="social-link" href="#" aria-label="YouTube">📺</a>
+        <a class="social-link" href="#" aria-label="GitHub">🐙</a>
+        <a class="social-link" href="#" aria-label="Discord">🎮</a>
+        <a class="social-link" href="#" aria-label="Telegram">✉️</a>
+    </div>
+</main>
 
-        <div class="card">
-            <span>Social</span>
+<footer>
+    <p>&copy; 2025 My Homepage. All rights reserved.</p>
+</footer>
 
-            <a class="social-link" href="#" aria-label="YouTube">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 461.001 461.001" xml:space="preserve" fill="#000000">
-                    <g><path style="fill:#F61C0D;" d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"></path></g>
-                </svg>
-            </a>
-
-            <a class="social-link" href="#" aria-label="GitHub">
-                <svg fill="#000000" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5 ..."></path>
-                </svg>
-            </a>
-
-            <a class="social-link" href="#" aria-label="Discord">
-                <svg viewBox="0 -28.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <g><path d="M216.856339,16.5966031 C200.285002,8.84328665 ..."></path></g>
-                </svg>
-            </a>
-
-            <a class="social-link" href="#" aria-label="Telegram">
-                <svg fill="#000000" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M488.1 414.7V303.4L300.9 428l83.6 55.8zM254.1 137.7v-79.8l-59.8 39.9zM512 ..."></path>
-                </svg>
-            </a>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 My Homepage. All rights reserved.</p>
-    </footer>
 </body>
 </html>
